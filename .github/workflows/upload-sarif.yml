@@ -19,7 +19,7 @@ jobs:
     - name: run 
       run: |
         pip install anybadge     
-        anybadge --label=test --value=default --file=badge.svg
+        anybadge --label=test --value=default --file=badge.xml
         ls -la
 
     - name: Upload Artifact
@@ -30,6 +30,6 @@ jobs:
     - name: OpenCover Badge Generator
       uses: danpetitt/open-cover-badge-generator-action@v1.0.9
       with:
-        path-to-opencover-xml: ./badge.svg
+        path-to-opencover-xml: badge.xml
         minimum-coverage: 75
         repo-token: ${{ secrets.GITHUB_TOKEN }}
