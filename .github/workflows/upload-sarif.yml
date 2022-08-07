@@ -2,6 +2,8 @@ name: "Upload SARIF"
 
 on:
   push:
+    paths-ignore:
+      - README.md
   workflow_call:
 
 jobs:
