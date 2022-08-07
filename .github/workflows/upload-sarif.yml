@@ -37,7 +37,7 @@ jobs:
         badges: |
           [
             {
-              "badge": "${{ GITHUB_WORKSPACE }}/badge.svg",
+              "badge": "${{ github.GITHUB_WORKSPACE }}/badge.svg",
               "alt": "MIT License",
               "link": "${{ env.repo_url }}/blob/master/LICENSE"
             },
