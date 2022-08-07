@@ -27,11 +27,11 @@ jobs:
       with:
         name: release-build
         path: badge.svg
-    - uses: wow-actions/add-badges@v1
-      env:
-        repo_url: ${{ github.event.repository.html_url }}
-        repo_name: ${{ github.event.repository.name }}
-        repo_owner: ${{ github.event.repository.owner.login }}
+    - name: OpenCover Badge Generator
+      uses: danpetitt/open-cover-badge-generator-action@v1.0.9
       with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        badges: "-f badge.svg"
+        path-to-opencover-xml: ./badge.svg
+        path-to-badges: ./
+        minimum-coverage: 75
+        commit-badges: false
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
