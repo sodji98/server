@@ -1,6 +1,7 @@
 name: "Upload SARIF"
 
 on:
+  workflow_dispatch:
   push:
     paths-ignore:
       - README.md
