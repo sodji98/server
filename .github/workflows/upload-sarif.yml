@@ -24,12 +24,3 @@ jobs:
         name: release-build
         path: badge.svg
 
-    - name: Expose artifacts to env
-      uses: "michpohl/expose-artifacts@v1.0.0"
-      with:
-        github-token: "${{ secrets.GITHUB_TOKEN }}"
-        output-var-name: "RELEASE_ARTIFACT"
-        contains-string: "release-build"
-    - name: Use env var
-      run: |
-        echo $RELEASE_ARTIFACT
