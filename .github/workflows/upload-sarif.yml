@@ -36,7 +36,7 @@ jobs:
         badges: |
           [
             {
-              "badge": "${{ ./badge.svg }}",
+              "badge": "${{ badge.svg }}",
               "alt": "MIT License",
               "link": "${{ env.repo_url }}/blob/master/LICENSE"
             },
