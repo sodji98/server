@@ -4,14 +4,14 @@ on:
     workflows: ["build"]
     types:
       - "completed"
-      
-      
- jobs:
+
+jobs:
   post-artifacts:
     runs-on: ubuntu-latest
     steps:
-
+      # exposes urls of found artifacts as env vars, if their name contains "release-build"
       - name: Expose artifacts to env
+        id: new
         uses: "michpohl/expose-artifacts@v1.0.0"
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
@@ -20,3 +20,4 @@ on:
       - name: Use env var
         run: |
           echo $RELEASE_ARTIFACT
+          echo $RELEASE_ARTIFACT_0
