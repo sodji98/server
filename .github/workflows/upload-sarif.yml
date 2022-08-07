@@ -18,46 +18,9 @@ jobs:
         pip install anybadge     
         anybadge --label=test --value=default --file=badge.svg
     
-    - name: badge
-      uses: wow-actions/add-badges@v1
+    - name: Add Badges
+      uses: rocktimsaikia/badge-it@master
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        badges: |
-          [
-            {
-              "badge": "{{ badge.svg }}",
-              "alt": "MIT License",
-              "link": "${{ env.repo_url }}/blob/master/LICENSE"
-            },
-            {
-              "badge": "https://img.shields.io/badge/language-TypeScript-blue.svg?style=flat-square",
-              "alt": "Language",
-              "link": "https://www.typescriptlang.org"
-            },
-            {
-              "badge": "https://img.shields.io/badge/PRs-Welcome-brightgreen.svg?style=flat-square",
-              "alt": "PRs Welcome",
-              "link": "${{ env.repo_url }}/pulls"
-            },
-            {
-              "badge": "https://img.shields.io/static/v1?label=&labelColor=505050&message=marketplace&color=0076D6&style=flat-square&logo=google-chrome&logoColor=0076D6",
-              "alt": "website",
-              "link": "https://github.com/marketplace/actions/${{ env.repo_name }}"
-            },
-            {
-              "badge": "https://img.shields.io/github/workflow/status/${{ env.repo_owner }}/${{ env.repo_name }}/Release/master?logo=github&style=flat-square",
-              "alt": "build",
-              "link": "${{ env.repo_url }}/actions/workflows/release.yml"
-            },
-            {
-              "badge": "https://img.shields.io/lgtm/grade/javascript/g/${{ env.repo_owner }}/${{ env.repo_name }}.svg?logo=lgtm&style=flat-square",
-              "alt": "Language grade: JavaScript",
-              "link": "https://lgtm.com/projects/g/${{ env.repo_owner }}/${{ env.repo_name }}/context:javascript"
-            }
-          ]
-          
-        
-        # Opening comment
-        #opening_comment: # optional, default is <!-- [START BADGES] -->
-        # Closing comment
-        #closing_comment: # optional, default is <!-- [END BADGES] -->
+        badges: 'gh_license, gh_version, gh_stars'
+        badge-style: 'flat-square'
