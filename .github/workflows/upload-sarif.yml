@@ -24,7 +24,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         badges: |
           {
-            "badge": "badge.svg",
+            "badge": "https://img.shields.io/github/license/${{ env.repo_owner }}/${{ env.repo_name }}?style=flat-square,
             "alt": "Project badge",
             "link": "https://eclairit.com:3787/fs/home/emelin/github/$GITHUB_REPOSITORY/last_main/PROJECT.ecd"
           }
