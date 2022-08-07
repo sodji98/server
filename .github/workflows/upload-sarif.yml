@@ -34,4 +34,4 @@ jobs:
         repo_owner: ${{ github.event.repository.owner.login }}
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        badges: ./badge.svg
+        badges: -f ./badge.svg
