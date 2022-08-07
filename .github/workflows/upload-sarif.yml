@@ -20,6 +20,7 @@ jobs:
       run: |
         pip install anybadge     
         anybadge --label=test --value=default --file=badge.svg
+        ls -la
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
@@ -36,7 +37,7 @@ jobs:
         badges: |
           [
             {
-              "badge": "@{{ badge.svg }}",
+              "badge": "${{ GITHUB_WORKSPACE }}/badge.svg",
               "alt": "MIT License",
               "link": "${{ env.repo_url }}/blob/master/LICENSE"
             },
