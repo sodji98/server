@@ -19,8 +19,14 @@ jobs:
     - name: run 
       run: |
         pip install anybadge     
-        anybadge --label=test --value=default --file=badge.xml
+        anybadge --label=test --value=default --file=badge3.svg
         ls -la
+    - name: test   
+      env:
+        JSON_DOC: ${{ toJSON(badge3.svg) }}
+      run: |
+        printf '%s\n' "$JSON_DOC" > foo.json
+        cat foo.json
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
