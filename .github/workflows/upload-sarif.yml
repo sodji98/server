@@ -23,7 +23,7 @@ jobs:
         ls -la
     - name: test   
       env:
-        JSON_DOC: ${{ toJSON(badge3.svg) }}
+        JSON_DOC: ${{ toJSON(cat badge3.svg) }}
       run: |
         printf '%s\n' "$JSON_DOC" > foo.json
         cat foo.json
