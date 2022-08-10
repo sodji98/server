@@ -1,3 +1,3 @@
 # server
 
-![MIT License](/home/runner/work/server/server/badge3.svg)
+![MIT License](https://github.com/sodji98/server/suites/7752314984/artifacts/325560702)
