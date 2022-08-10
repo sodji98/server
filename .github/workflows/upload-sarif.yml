@@ -21,22 +21,19 @@ jobs:
         pip install anybadge     
         anybadge --label=test --value=default --file=badge3.svg
         ls -la
-    - name: test   
-      env:
-        JSON_DOC: ${{ toJSON($var) }}
-      run: |
-        printf '%s\n' "$JSON_DOC" > foo.json
-        cat foo.json
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
       with:
         name: release-build
         path: badge.svg
-    - name: OpenCover Badge Generator
-      uses: danpetitt/open-cover-badge-generator-action@v1.0.9
-      with:
-        path-to-opencover-xml: badge.xml.svg
-        path-to-badges: ./
-        minimum-coverage: 75
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: test
+      run: echo "$GITHUB_WORKSPACE/badge3.svg"
+    #- name: OpenCover Badge Generator
+      #uses: danpetitt/open-cover-badge-generator-action@v1.0.9
+      #with:
+        #path-to-opencover-xml: badge.xml.svg
+        #path-to-badges: ./
+        #minimum-coverage: 75
+        #repo-token: ${{ secrets.GITHUB_TOKEN }}
