@@ -40,3 +40,9 @@ jobs:
     - uses: kittaakos/upload-artifact-as-is@v0
       with:
         path: badge.svg
+        
+    - uses: SierraSoftworks/gh-releases@v1.0.4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        overwrite: 'true'
+        files: badge.svg
