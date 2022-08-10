@@ -19,7 +19,7 @@ jobs:
     - name: run 
       run: |
         pip install anybadge     
-        anybadge --label=test --value=default --file=badge3.svg
+        anybadge --label=test --value=default --file=badge.svg
         ls -la
 
     - name: Upload Artifact
@@ -37,9 +37,6 @@ jobs:
         #path-to-badges: ./
         #minimum-coverage: 75
         #repo-token: ${{ secrets.GITHUB_TOKEN }}
-    - name: Set up changelog
-      uses: heinrichreimer/github-changelog-generator-action@v2.1.1
+    - uses: kittaakos/upload-artifact-as-is@v0
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-    - run: |
-        ls
+        path: badge.svg
